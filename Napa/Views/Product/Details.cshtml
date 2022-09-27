@@ -1,0 +1,46 @@
+﻿@model Product;
+
+
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <p>
+            <h4>Details </h4>
+        </p>
+
+
+        <div class="row">
+            <div class="col-md-8 offset-2">
+
+                    <div class="form-group">
+                        <label asp-for="Title" class="control-label"></label>
+                        <input asp-for="Title" class="form-control" readonly/>
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Quantiy" class="control-label"></label>
+                        <input asp-for="Quantiy" class="form-control" readonly/>
+                        <span asp-validation-for="Quantiy" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Price" class="control-label"></label>
+                        <input asp-for="Price" class="form-control" readonly/>
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <a class="btn btn-outline-success" asp-action="Edit">Update</a>
+                        <a class="btn btn-outline-secondary" asp-action="Index">Cancel</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+            $(document).ready(function)() { 
+            var output = document.getElementById('Title');
+            output.src = $('#Title').val();
+            }
+    </script>
+}
